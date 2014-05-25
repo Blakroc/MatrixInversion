@@ -1,4 +1,4 @@
-
+# The folowing method cahes matrix inversion for the ease of reuse if/when results are available.
 
 makeCacheMatrix <- function( x = matrix() ){
       
@@ -23,6 +23,8 @@ makeCacheMatrix <- function( x = matrix() ){
             getinverse = getinverse)
 }
 
+# The following method computes the matri inversion of the provided input matrix
+# After the inverse id computed the results are cached as defined in the method above
 cacheSolve <- function(x, ...){
       
       i <- x$getinverse()
