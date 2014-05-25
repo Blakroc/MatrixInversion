@@ -32,7 +32,7 @@ makeCacheMatrix <- function( x = matrix() ){
 # Methods available: cacheSolve has no internally defined function, 
 #                    when called the method caches results and returns the same.
 ################################
-cacheSolve <- function(x, ...){
+cacheSolve <- function(x){
       
       i <- x$getinverse()
       
@@ -42,7 +42,7 @@ cacheSolve <- function(x, ...){
       }
       
       data <- x$get()
-      i <- solve(data, ...)
+      i <- solve(data)
       x$setinverse(i)
       
       i
