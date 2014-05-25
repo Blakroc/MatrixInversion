@@ -1,5 +1,9 @@
-# The folowing method cahes matrix inversion for the ease of reuse if/when results are available.
-
+################################
+# Description:  The folowing method caches the matrix inversion of an input for the ease of reuse,
+#               if/when results are available.
+# Methods available: Innterally get andset methods are used to get or set the input matrix.
+#                    getinverse and setinverse are used to get or set the input matrix's inverse matrix result.
+################################
 makeCacheMatrix <- function( x = matrix() ){
       
       i <- NULL
@@ -22,9 +26,12 @@ makeCacheMatrix <- function( x = matrix() ){
             setinverse = setinverse,
             getinverse = getinverse)
 }
-
-# The following method computes the matri inversion of the provided input matrix
-# After the inverse id computed the results are cached as defined in the method above
+################################
+# Dsecription: The following method computes the matrix inversion of the provided input matrix
+#              After the inverse id computed the results are cached by calling methods from 'makeCacheMatrix'
+# Methods available: cacheSolve has no internally defined function, 
+#                    when called the method caches results and returns the same.
+################################
 cacheSolve <- function(x, ...){
       
       i <- x$getinverse()
