@@ -36,7 +36,7 @@ makeCacheMatrix <- function( x = matrix() ){
 # Input: List  ( The special Matrix produced by 'makeCacheMatrix' which is really a list with functions )
 # Output: Matrix ( Inverse Matrix result)
 ################################
-cacheSolve <- function(x){
+cacheSolve <- function(x, ...){
       
       i <- x$getinverse()
       
@@ -46,7 +46,7 @@ cacheSolve <- function(x){
       }
       
       data <- x$get()
-      i <- solve(data)
+      i <- solve(data, ...)
       x$setinverse(i)           
       
       i
